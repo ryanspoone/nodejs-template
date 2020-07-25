@@ -1,0 +1,19 @@
+#
+# Documentation:
+# https://help.github.com/en/articles/workflow-syntax-for-github-actions
+#
+
+name: Test Code Base
+on: [push, pull_request]
+jobs:
+    build:
+        name: Test Code Base
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/setup-node@v2
+              with:
+                  node-version: '12'
+                  check-latest: true
+            - run: npm install
+            - run: npm run lint
+            - run: npm test
