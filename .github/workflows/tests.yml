@@ -10,7 +10,7 @@ jobs:
         name: Test Code Base
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/setup-node@v2
+            - uses: actions/setup-node
               with:
                   node-version: '12'
                   check-latest: true
