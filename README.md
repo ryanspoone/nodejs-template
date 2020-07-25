@@ -10,7 +10,6 @@
 ## Running
 
 ```bash
-cd <<module-name>>
 npm start
 ```
 
@@ -19,13 +18,11 @@ npm start
 ### Testing
 
 ```bash
-cd <<module-name>>
 npm test
 ```
 
 ### Fix formatting
 
 ```bash
-cd <<module-name>>
 npm run format
 ```
