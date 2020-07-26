@@ -9,7 +9,8 @@
         "format": "eslint . --fix",
         "start": "node index.js"
     },
-    "author": "{{author}}",
+    "author": "Ryan Spoone",
+    "homepage": "https://github.com/ryanspoone/nodejs-template.git",
     "license": "MIT",
     "dependencies": {
         "dotenv": "^8.2.0",
