@@ -1,5 +1,5 @@
 /**
- * @copyright Copyright (c) {{year}} {{author}}.
+ * @copyright Copyright (c) 2020 Ryan Spoone
  */
 
 'use strict';
