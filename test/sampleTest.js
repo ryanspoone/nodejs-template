@@ -1,6 +1,6 @@
 /**
  * @file Sample test file. Remove once adding tests.
- * @copyright Copyright (c) 2020 Ryan Spoone
+ * @copyright Copyright (c) 2020 ryanspoone
  */
 
 'use strict';
