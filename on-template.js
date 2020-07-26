@@ -18,6 +18,9 @@ if (!GITHUB_REPOSITORY) {
     throw new Error('Unknown GITHUB_REPOSITORY.');
 }
 
+// eslint-disable-next-line no-console
+console.log(`${GITHUB_ACTOR}'s ${GITHUB_REPOSITORY}`);
+
 const TEMPLATE_PACKAGE_NAME = package.name;
 const PACKAGE_NAME = `@${GITHUB_REPOSITORY.toLowerCase()}`;
 
