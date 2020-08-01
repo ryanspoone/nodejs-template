@@ -31,7 +31,7 @@ const PACKAGE_NAME = `@${GITHUB_REPOSITORY.toLowerCase()}`;
 package.name = PACKAGE_NAME;
 package.homepage = package.homepage.replace(TEMPLATE_GITHUB_REPOSITORY, GITHUB_REPOSITORY);
 package.author = package.author.replace(TEMPLATE_AUTHOR, GITHUB_ACTOR);
-writeFileSync('./package.json', JSON.stringify(package, null, 4), { encoding: 'utf8' });
+writeFileSync('./package.json', `${JSON.stringify(package, null, 4)}\n`, { encoding: 'utf8' });
 
 /**
  * README.md
