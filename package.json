@@ -1,5 +1,5 @@
 {
-    "name": "@ryanspoone/nodejs-template",
+    "name": "nodejs-template",
     "version": "0.0.1",
     "description": "",
     "main": "index.js",
@@ -9,7 +9,7 @@
         "format": "eslint . --fix",
         "start": "node index.js"
     },
-    "author": "ryanspoone",
+    "author": "Ryan Spoone",
     "homepage": "https://github.com/ryanspoone/nodejs-template.git",
     "license": "MIT",
     "dependencies": {

@@ -4,7 +4,7 @@ const { writeFileSync, readFileSync, unlinkSync } = require('fs');
 
 const package = require('./package.json');
 
-const TEMPLATE_AUTHOR = 'ryanspoone';
+const TEMPLATE_AUTHOR = 'Ryan Spoone';
 const TEMPLATE_GITHUB_REPOSITORY = 'ryanspoone/javascript-template';
 const { GITHUB_REPOSITORY, GITHUB_ACTOR } = process.env;
 
