@@ -3,23 +3,30 @@ on:
     push:
         branches:
             - master
+            - main
 jobs:
-    npm-publish:
+    template-replace:
         name: On template
         runs-on: ubuntu-latest
         steps:
             - name: Checkout
-              uses: actions/checkout@v1
+              uses: actions/checkout@v4
             - name: Setup Node
-              uses: actions/setup-node@v1
+              uses: actions/setup-node@v4
               with:
-                  node-version: 12
-            - run: npm install
+                  node-version: 20
+                  cache: 'npm'
+            - run: npm ci
             - name: Replace
               run: node ./on-template.js
-            - name: push
-              uses: github-actions-x/commit@v2.1
+            - name: Commit changes
+              run: |
+                  git config --local user.email "github-actions[bot]@users.noreply.github.com"
+                  git config --local user.name "github-actions[bot]"
+                  git add -A
+                  git diff --staged --quiet || git commit -m "chore: replace template variables"
+            - name: Push changes
+              uses: ad-m/github-push-action@master
               with:
-                  github-token: ${{ secrets.GITHUB_TOKEN }}
-                  commit-message: 'chore: replaces template variables'
-                  rebase: 'true'
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  branch: ${{ github.ref }}
