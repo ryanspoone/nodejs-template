@@ -1,8 +1,14 @@
 #!/usr/bin/env node
 
+/**
+ * @file Template initialization script that replaces placeholder values with repository-specific information
+ * @description This script runs when a new repository is created from this template.
+ * It replaces template author names, repository URLs, and package names with actual values from GitHub environment variables.
+ */
+
 const { writeFileSync, readFileSync, unlinkSync } = require('fs');
 
-const package = require('./package.json');
+const packageJson = require('./package.json');
 
 const TEMPLATE_AUTHOR = 'Ryan Spoone';
 const TEMPLATE_GITHUB_REPOSITORY = 'ryanspoone/nodejs-template';
@@ -21,17 +27,17 @@ if (!GITHUB_REPOSITORY) {
 // eslint-disable-next-line no-console
 console.log(`${GITHUB_ACTOR}'s ${GITHUB_REPOSITORY}`);
 
-const TEMPLATE_PACKAGE_NAME = package.name;
+const TEMPLATE_PACKAGE_NAME = packageJson.name;
 const PACKAGE_NAME = `@${GITHUB_REPOSITORY.toLowerCase()}`;
 
 /**
  * package.json
  */
 
-package.name = PACKAGE_NAME;
-package.homepage = package.homepage.replace(TEMPLATE_GITHUB_REPOSITORY, GITHUB_REPOSITORY);
-package.author = package.author.replace(TEMPLATE_AUTHOR, GITHUB_ACTOR);
-writeFileSync('./package.json', `${JSON.stringify(package, null, 4)}\n`, { encoding: 'utf8' });
+packageJson.name = PACKAGE_NAME;
+packageJson.homepage = packageJson.homepage.replace(TEMPLATE_GITHUB_REPOSITORY, GITHUB_REPOSITORY);
+packageJson.author = packageJson.author.replace(TEMPLATE_AUTHOR, GITHUB_ACTOR);
+writeFileSync('./package.json', `${JSON.stringify(packageJson, null, 4)}\n`, { encoding: 'utf8' });
 
 /**
  * README.md
